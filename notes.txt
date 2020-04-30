@@ -1,0 +1,3 @@
+Kubernetes or K8s:
+Node(Minions) = machine where containers will be launched by Kubernetes
+cluster = set of nodes grouped together
