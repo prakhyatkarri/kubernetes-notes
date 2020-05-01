@@ -1,3 +1,54 @@
 Kubernetes or K8s:
 Node(Minions) = machine where containers will be launched by Kubernetes
 cluster = set of nodes grouped together
+
+Master:
+kube-apiserver
+etcd
+controller
+scheduler
+
+Node:
+kubelet
+
+
+kubectl:
+kubectl run hello-minikube
+kubectl cluster-info
+kubectl get nodes
+
+kubectl get nodes -o wide # Get more information
+
+
+Minikube (All below in one):
+Master:
+kube-apiserver
+etcd
+node-controller
+replica-controller
+
+Node:
+kubelet
+
+
+Pod:
+Single instance of an object in K8s
+Pods maintain a 1:1 relation to containers
+kubectl get pods (-o wide)
+kubectl describe pods
+
+kubectl run nginx --image=nginx
+You can create pods from the command line using any of the below two ways:
+
+1. Create an NGINX Pod (using --generator)
+kubectl run --generator=run-pod/v1 nginx --image=nginx
+
+2. Create an NGINX Pod (using --restart=Never)
+
+kubectl run nginx --image=nginx --restart=Never
+
+If you run the kubectl run command without the --restart=Never OR the --generator=run-pod/v1, the command will create a deployment instead (as of version 1.16).
+Note that this way of creating a deployment is deprecated and should not be used.
+Instead, use kubectl create command to create a deployment
+kubectl create deployment nginx --image=nginx
+

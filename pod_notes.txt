@@ -1,0 +1,26 @@
+Pod:
+pod-definition.yml
+apiVersion: v1
+kind: Pod
+metadata: 
+	name: myapp-pod
+	labels: 
+		app: myapp
+		type: front-end
+spec:
+	containers: 
+		- name: nginx-container
+		  image: nginx
+
+
+kubectl create -f pod-definition.yml
+kubectl get pods
+kubectl describe pod <pod_name>
+
+kubectl delete pod <pod_name>
+kubectl edit pod <pod_name>
+
+
+
+
+
