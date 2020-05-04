@@ -1,0 +1,15 @@
+Replication Controller:
+Can manage more than 1 node and maintain desired pod capacity
+Replication controller is replaced by Replica Set
+kubectl create -f <yml>
+kubectl replace -f <yml>
+kubectl delete replicaset <metadata.name>
+kubectl scale --replicas=7 -f <yml>
+kubectl scale --replicas=7 replicaset myapp-replicaset
+kubectl scale --replicas=<replicas> <type> <metadata.name>
+kubectl get replicaset
+kubectl describe replicaset
+kubectl edit replicaset <replicaset>
+
+
+kubectl get all

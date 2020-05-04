@@ -1,0 +1,29 @@
+Same as of ReplicaSet -> kind: Deployment
+kubectl get all
+kubectl get deployments
+kubectl describe deployment
+kubectl get deployment <deployment> -o yaml > <file.yaml>
+
+
+kubectl rollout status deployment/<deployment>
+
+Strategies:
+Recreate: Destroy all old and create all new. App dowmtime.
+Rolling Update: Destroy one and create one. Repeat for all pods. No app downtime.
+
+
+Update deployment:
+Update deployment.yaml and use "kubectl apply -f <updated_deployment.yaml>
+kubectl set image deployment/<deployment> <image> # Not recommended
+kubectl rollout history deployment/<deployment>
+
+Rollback to previous:
+kubectl rollout undo deployment/<deployment>
+
+
+kubectl get replicaset # Verify replicasets status
+
+
+kubectl run nginx --image=nginx # deployment "nginx" created
+
+Record revision by adding --record=true in kubectl commands
