@@ -1,0 +1,14 @@
+Networking:
+IP address is assigned to a Node
+IP address is assigned to a POD
+Ex: Internal Private Network -> 10.244.0.0 -> sample pod has 10.244.0.2 -> Interal IP
+
+
+Rules:
+All containers/pods communicate with each other without NAT
+All nodes communicate with each other/viceversa without NAT
+A network/routing layer should be installed between nodes
+kubectl get pods -o wide # displays Node and IP information
+
+
+

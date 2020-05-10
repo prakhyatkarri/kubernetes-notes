@@ -1,0 +1,16 @@
+Services:
+Helps in connecting to applications
+
+NodePort: Listens to a port on Node and forwards the requests to a port on Pod/Container
+Port = host (service object) port
+TargetPort = pod/container port
+Range = 30000-32767
+IP address of service object is called ClusterIP
+Cluster IP: Service creates a virtual IP inside note to communicate between pods
+Load Balancer: Creates a load balancer for node
+
+
+
+
+Algorithm: Random
+Affinity: Yes
