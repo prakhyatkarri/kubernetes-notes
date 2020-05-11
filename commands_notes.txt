@@ -1,5 +1,19 @@
-##POD
-###Create an NGINX Pod
+While you would be working mostly the declarative way - using definition files, imperative commands can help in getting one time tasks done quickly, as well as generate a definition template easily. This would help save considerable amount of time during your exams.
+
+Before we begin, familiarise with the two options that can come in handy while working with the below commands:
+
+--dry-run: By default as soon as the command is run, the resource will be created. If you simply want to test your command , use the --dry-run option. This will not create the resource, instead, tell you weather the resource can be created and if your command is right.
+
+-o yaml: This will output the resource definition in YAML format on screen.
+
+
+
+Use the above two in combination to generate a resource definition file quickly, that you can then modify and create resources as required, instead of creating the files from scratch.
+
+
+
+POD
+Create an NGINX Pod
 
 kubectl run --generator=run-pod/v1 nginx --image=nginx OR
 
@@ -13,7 +27,7 @@ kubectl run --generator=run-pod/v1 nginx --image=nginx --dry-run -o yaml
 
 
 
-###Create a deployment
+Create a deployment
 
 kubectl create deployment nginx --image=nginx
 
@@ -40,7 +54,7 @@ kubectl create deployment nginx --image=nginx --dry-run -o yaml > nginx-deployme
 kubectl apply -f nginx-deployment.yaml
 
 
-##Service
+Service
 Create a Service named redis-service of type ClusterIP to expose pod redis on port 6379
 
 kubectl expose pod redis --port=6379 --name redis-service --dry-run -o yaml
